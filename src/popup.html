@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pop-Up &laquo; Quick-Notifier for ChatWork</title>
+        <meta name="twitter:widgets:csp" content="on">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/page-popup.css">
+        <script src="lib/jquery-2.0.3.min.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/chatwork.js"></script>
+        <script src="js/adapter.js"></script>
+    </head>
+    <body>
+        <div id="authentication" style="display:none;">
+            <div class="clearfix">
+                <input type="text" id="api-token" value="" placeholder="Input your API Token for ChatWork" style="width:200px; display:inline-block;">
+                <input type="button" id="save-api-token" value="Save" style="display:inline-block;">
+            </div>
+        </div>
+        <div id="notification" style="display:none;">
+            <header class="clearfix">
+                <span>ID:</span>
+                <b data-id="">--</b>
+                (<b data-email="">--</b>)
+                <!--
+                <span style="float:right;">
+                    <a href="javascript:void(0)">Logout</a>
+                </span>
+                -->
+            </header>
+            <div class="notifications" style="display: none;">
+                <b>Notifications</b>
+                <ul></ul>
+            </div>
+        </div>
+        <!--
+        <div id="menu" class="clearfix">
+            <input id="deauthorize" type="button" value="Deauthorize" style="float: right; width: 138px;" disabled>
+        </div>
+        -->
+        <div id="sharer" class="clearfix" style="display: none;">
+            <b>Share this extension</b>
+            <ul>
+                <!--
+                <li>
+                    <a href="https://twitter.com/share" 
+                       class="twitter-share-button" 
+                       data-url="https://chrome.google.com/webstore/detail/gdefhppjmapmooojcbdbbpgakejfnhec" 
+                       data-text="Quick-Notifier for ChatWork - Chrome Web Store" 
+                       data-via="chatwork_checker" 
+                       data-related="tetsukamp" 
+                       data-hashtags="chatwork_chekcer">Tweet</a>
+                </li>
+                <li>
+                    <iframe src="https://www.facebook.com/plugins/share_button.php?locale=en_US&href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fgdefhppjmapmooojcbdbbpgakejfnhec&type=button_count" style="width: 100px; height: 19px; border: 0;"></iframe>
+                </li>
+                <li>
+                    <g:plusone href="https://chrome.google.com/webstore/detail/gdefhppjmapmooojcbdbbpgakejfnhec" size="medium"></g:plusone>
+                </li>
+                <li>
+                    
+                    <a href="http://b.hatena.ne.jp/my/add.confirm?url=https://chrome.google.com/webstore/detail/gdefhppjmapmooojcbdbbpgakejfnhec"
+                       target="_blank"><img src="http://b.hatena.ne.jp/bc/bl/https://chrome.google.com/webstore/detail/gdefhppjmapmooojcbdbbpgakejfnhec" alt="はてなブックマーク数"></a>
+                </li>
+                -->
+            </ul>
+        </div>
+        <footer id="footer" class="clearfix">
+            <small>&copy; <a href="http://tetsuwo.tumblr.com" target="_blank">Tetsuwo OISHI</a></small> - 
+            <small><a href="https://github.com/tetsuwo/quick-notifier-for-chatwork-chrome.ext" target="_blank">GitHub</a></small>
+            <!--<small style="float:right;"><a id="share" href="javascript:void(0)">Share</a></small>-->
+        </footer>
+        <script src="js/page-popup.js"></script>
+    </body>
+</html>

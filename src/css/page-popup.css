@@ -1,0 +1,125 @@
+
+body {
+    min-width: 350px;
+    max-width: 350px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #eee;
+    font-size: 12px;
+    font-family: Arial;
+}
+
+input[type="button"] {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+.notifications ul {
+    list-style: disc inside;
+    background-color: #f5f5f5;
+    margin: .5em 0 1em;
+    padding: .25em .5em;
+    border-radius: .5em;
+}
+    .notifications ul li {
+        display: block;
+        padding: .5em;
+        color: #333;
+        list-style: disc inside;
+        border-bottom: 1px dotted #888;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    .notifications ul li:nth-child(even) {
+        background-color: #eee;
+    }
+    .notifications ul li:last-child {
+        border-bottom: none;
+    }
+        .notifications ul li a {
+            color: #333;
+            text-decoration: none;
+            line-height: 1.5;
+        }
+            .notifications ul li .board-name {
+                display: block;
+                color: #777;
+            }
+            .notifications ul li .card-outline {
+                display: inline-block;
+            }
+            .notifications ul li .card-outline:hover {
+                text-decoration: underline;
+            }
+            .notifications ul li .card-type {
+                margin-top: .25em;
+                display: inline-block;
+                padding: 0 .4em;
+                margin-right: .25em;
+                border-radius: 2px;
+                background-color: #888;
+                color: #fff;
+                vertical-align: middle;
+                font-size: 10px;
+            }
+            .notifications ul li .notif-read {
+                display: none;
+                padding: 0 .4em;
+                margin-left: .25em;
+                font-weight: bold;
+                border-radius: 2em;
+                background-color: #ddd;
+                vertical-align: middle;
+                font-size: 8px;
+            }
+            .notifications ul li .notif-read:hover {
+                background-color: #d00;
+                color: #fff;
+            }
+            .notifications ul li:hover .notif-read {
+                display: inline-block;
+            }
+            .notifications ul li .notif-info {
+                display: block;
+                padding: .5em;
+                border-radius: .5em;
+                background-color: #fff;
+                color: #555;
+                font-size: 90%;
+            }
+
+#sharer {
+    margin-top: 1em;
+}
+    #sharer ul {
+        padding: 0;
+        margin: 0;
+    }
+        #sharer ul li {
+            float: left;
+            height: 19px;
+            display: inline-block;
+            padding: 0;
+            margin: 2px;
+            list-style: none;
+        }
+
+#footer {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+}
+    #footer, #footer a {
+        color: #aaa;
+        font-size: 95%;
+        font-weight: bold;
+        text-decoration: none;
+    }
+

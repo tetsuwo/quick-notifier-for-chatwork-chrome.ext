@@ -1,0 +1,1 @@
+Adapter.run(true);

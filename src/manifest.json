@@ -1,0 +1,34 @@
+{
+  "name": "__MSG_ext_name__",
+  "description": "__MSG_ext_description__",
+  "default_locale": "en",
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "19": "images/243.png",
+      "38": "images/243.png"
+    }
+  },
+  "icons": {
+    "16": "images/243.png",
+    "48": "images/243.png",
+    "64": "images/243.png",
+    "128": "images/243.png"
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "https://api.chatwork.com/*"
+  ],
+  "web_accessible_resources": [
+    "callback.html"
+  ],
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "content_security_policy": 
+    "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://apis.google.com; frame-src https://plusone.google.com https://www.facebook.com https://platform.twitter.com https://apis.google.com https://accounts.google.com; object-src 'self'"
+}
