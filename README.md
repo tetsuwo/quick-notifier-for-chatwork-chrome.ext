@@ -14,8 +14,6 @@ ELSEWHERE
 - [Change Log](https://github.com/tetsuwo/quick-notifier-for-chatwork-chrome.ext/blob/master/CHANGELOG.md)
 - [Bugs and Issues](https://github.com/tetsuwo/quick-notifier-for-chatwork-chrome.ext/issues)
   ... Report Bugs and Issues
-- [Twitter](https://twitter.com/chatwork_checker)
-  ... Update Information
 
 
 
