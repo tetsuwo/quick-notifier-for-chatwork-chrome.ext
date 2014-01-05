@@ -1,16 +1,14 @@
 /*!
- * ChatWork Checker
+ * Quick-Notifieir for ChatWork
  *
- * Copyright 2010-2012, Tetsuwo OISHI.
+ * Copyright 2013-2014, Tetsuwo OISHI.
  * Dual license under the MIT license.
  * http://tetsuwo.tumblr.com
- *
- * Date: 2012-06-21
  */
 
 // Google Analytics
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-17392775-10']);
+/*_gaq.push(['_setAccount', 'UA-XXXXXXXX-XX']);
 _gaq.push(['_trackPageview']);
 (function() {
     var ga = document.createElement('script');
@@ -18,4 +16,4 @@ _gaq.push(['_trackPageview']);
     ga.src = 'https://ssl.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
-})();
+})();*/
