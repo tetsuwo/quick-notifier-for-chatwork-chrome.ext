@@ -1,7 +1,7 @@
 /*!
  * ChatWork - Chrome JavaScript SDK for ChatWork API v1 Preview
  *
- * Copyright 2013, Tetsuwo OISHI.
+ * Copyright 2013-2014, Tetsuwo OISHI.
  * Dual license under the MIT license.
  * http://tetsuwo.tumblr.com
  *
