@@ -1,5 +1,5 @@
 /*!
- * Page Callback JS
+ * JavaScript for Callback Page (for OAuth)
  *
  * @author Tetsuwo OISHI
  */
