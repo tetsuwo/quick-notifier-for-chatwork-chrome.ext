@@ -73,6 +73,7 @@ var _notif = function(init) {
 };
 
 var _checker = function() {
+    Adapter.run();
     if (Adapter.authorized()) {
         $('#authentication').hide();
         $('#notification').slideDown();
@@ -105,6 +106,11 @@ $('#go-notif').on('click', function() {
     chrome.tabs.create({
         url: $(this).attr('data-url') + '/notifications'
     });
+});
+
+$('#reset').on('click', function() {
+    Adapter.deauthorize();
+    _checker();
 });
 
 $('#save-api-token').on('click', function() {

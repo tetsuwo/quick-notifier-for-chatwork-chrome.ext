@@ -1,7 +1,7 @@
 /*!
  * Adapter
  *
- * Copyright 2010-2013, Tetsuwo OISHI.
+ * Copyright 2013-2014, Tetsuwo OISHI.
  * Dual license under the MIT license.
  * http://tetsuwo.tumblr.com
  *
@@ -17,6 +17,7 @@ var Adapter = {};
     obj.timer     = 15 * 1000;
     obj.prevCount = null;
     obj.responses = {};
+    obj.logCount  = 0;
 
     obj.authorized = function() {
         var apiTokenString = ls.get('chatwork-api-token');
@@ -36,36 +37,38 @@ var Adapter = {};
         switch (type.toUpperCase()) {
             case 'ALERT':
                 return [203, 77, 77, 255];
-
             case 'CLEAR':
                 return [52, 178, 125, 255];
-
             default:
                 return [66, 66, 66, 255];
         }
     };
 
     obj.setColor = function(type) {
-        this.toolbar.setBadgeBackgroundColor({ color: obj.getColor(type) });
+        this.toolbar.setBadgeBackgroundColor({
+            color: obj.getColor(type)
+        });
     };
 
     obj.setText = function(val) {
-        this.toolbar.setBadgeText({ text: String(val) });
+        this.toolbar.setBadgeText({
+            text: String(val)
+        });
     };
 
     obj.log = function() {
+        if (this.logCount % 10 === 0) {
+            console.clear();
+        }
         console.log(arguments);
+        this.logCount++;
     };
 
     obj.process = function() {
-        //if (!localStorage.token) {
-        //    return that.startTimer();
-        //}
         obj.run();
-
         var that = obj;
         obj.client.api('/my/status', null, function(response) {
-            obj.log('run.response = ', response);
+            obj.log('run.response = ', response, that.prevCount != response.unread_num);
             if (that.prevCount != response.unread_num) {
                 that.prevCount = response.unread_num;
                 that.setColor(response.unread_num === 0 ? 'CLEAR' : 'ALERT');
@@ -85,11 +88,9 @@ var Adapter = {};
 
     obj.run = function(init) {
         obj.client = new ChatWork();
-
         if (this.authorized()) {
             obj.client.setApiToken(ls.get('chatwork-api-token'));
         }
-
         if (init) {
             this.setColor('ALERT');
             this.setText('!');
