@@ -3,4 +3,5 @@
  *
  * @author Tetsuwo OISHI
  */
+
 Adapter.run(true);
