@@ -1,5 +1,5 @@
 /*!
- * JavaScript for Pop-up page
+ * JavaScript for Pop-up Page
  *
  * @author Tetsuwo OISHI
  */
