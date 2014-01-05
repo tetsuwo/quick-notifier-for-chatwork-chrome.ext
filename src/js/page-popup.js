@@ -1,6 +1,7 @@
-/**
- * Pop-up page JavaScript
+/*!
+ * JavaScript for Pop-up page
  *
+ * @author Tetsuwo OISHI
  */
 
 Adapter.run();
