@@ -17,13 +17,14 @@
             <div class="clearfix">
                 <input type="text" id="api-token" value="" placeholder="Input your API Token for ChatWork" style="width:200px; display:inline-block;">
                 <input type="button" id="save-api-token" value="Save" style="display:inline-block;">
+                <p style="margin-top: .5em;">Request for API token is <a href="http://developer.chatwork.com/" target="_blank">here</a></p>
             </div>
         </div>
         <div id="notification" style="display:none;">
             <header class="clearfix">
                 <span>ID:</span>
                 <b data-id="">--</b>
-                (<b data-email="">--</b>)
+                <span class="block-email">(<b data-email="">--</b>)</span>
                 <!--
                 <span style="float:right;">
                     <a href="javascript:void(0)">Logout</a>
@@ -31,7 +32,7 @@
                 -->
             </header>
             <div class="notifications" style="display: none;">
-                <b>Notifications</b>
+                <!--<h1>Notifications</h1>-->
                 <ul></ul>
             </div>
         </div>

@@ -1,12 +1,23 @@
+/**
+ *
+ * Main Color
+ *   Red        ... #F9423A
+ *   Rich Black ... #34362F
+ *
+ * Secondary Color
+ *   Tan        ... #8F836D
+ *   Cream      ... #D6D2C4
+ *
+ */
 
 body {
     min-width: 350px;
     max-width: 350px;
-    padding: 10px;
     border-radius: 3px;
     background-color: #eee;
     font-size: 12px;
     font-family: Arial;
+    color: #34362F;
 }
 
 input[type="button"] {
@@ -15,30 +26,39 @@ input[type="button"] {
     margin: 0;
 }
 
-header {
-    margin-bottom: 1em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid #ccc;
+#authentication {
+    padding: 10px;
 }
 
+header {
+    border-bottom: 1px solid #bbb;
+    padding: 10px;
+}
+.notifications {
+    padding: 10px 0;
+}
+.notifications h1 {
+    color: #aaa;
+    padding: 10px 10px 5px;
+}
 .notifications ul {
     list-style: disc inside;
-    background-color: #f5f5f5;
-    margin: .5em 0 1em;
-    padding: .25em .5em;
-    border-radius: .5em;
+    background-color: #efefef;
+    /*margin: 0 0 1em;*/
+    /*padding: .25em .5em;*/
+    /*border-radius: .5em;*/
 }
     .notifications ul li {
         display: block;
-        padding: .5em;
+        padding: .5em 10px;
         color: #333;
         list-style: disc inside;
-        border-bottom: 1px dotted #888;
+        border-bottom: 1px dotted #ccc;
         word-break: break-all;
         word-wrap: break-word;
     }
     .notifications ul li:nth-child(even) {
-        background-color: #eee;
+        background-color: #f3f3f3;
     }
     .notifications ul li:last-child {
         border-bottom: none;
@@ -50,7 +70,7 @@ header {
         }
             .notifications ul li .board-name {
                 display: block;
-                color: #777;
+                color: #555;
             }
             .notifications ul li .card-outline {
                 display: inline-block;
@@ -112,9 +132,8 @@ header {
         }
 
 #footer {
-    margin-top: 1em;
-    padding-top: 1em;
-    border-top: 1px solid #ccc;
+    padding: 10px;
+    border-top: 1px solid #bbb;
 }
     #footer, #footer a {
         color: #aaa;

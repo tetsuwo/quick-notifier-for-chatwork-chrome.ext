@@ -83,10 +83,18 @@ var _checker = function() {
             '/me',
             null,
             function(me) {
+                console.log('authenticated');
                 Adapter.log(me);
                 $('[data-id]').text(me.chatwork_id);
-                $('[data-email]').text(me.mail);
+                if (me.mail && me.mail != '') {
+                    $('[data-email]').text(me.mail);
+                    $('.block-email').show();
+                } else {
+                    $('.block-email').hide();
+                }
                 _notif();
+                var bg = chrome.extension.getBackgroundPage();
+                bg.Adapter.process();
             }
         );
     } else {

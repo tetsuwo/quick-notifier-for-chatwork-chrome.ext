@@ -18,6 +18,7 @@ var Adapter = {};
     obj.prevCount = null;
     obj.responses = {};
     obj.logCount  = 0;
+    obj.idPrefix  = 'qn-cw_';
 
     obj.authorized = function() {
         var apiTokenString = ls.get('chatwork-api-token');
@@ -34,14 +35,34 @@ var Adapter = {};
     };
 
     obj.getColor = function(type) {
-        switch (type.toUpperCase()) {
+        switch (type) {
             case 'ALERT':
-                return [203, 77, 77, 255];
-            case 'CLEAR':
-                return [52, 178, 125, 255];
+                return [200, 0, 0, 255];
+            //case 'CLEAR':
+            //    return [66, 178, 125, 255];
             default:
-                return [66, 66, 66, 255];
+                return [150, 150, 150, 255];
         }
+    };
+
+    obj.generateId = function(prefix) {
+        return prefix + String((new Date()).getTime());
+    };
+
+    obj.notify = function(title, message) {
+        var id = this.generateId(this.idPrefix);
+        var options = {
+            type: 'basic',
+            iconUrl: 'images/chatwork-logo_colorful.png',
+            title: title,
+            message: message
+        };
+        var callback = function (response) {
+            console.log('created notify', response);
+        };
+        console.log('notify id', id);
+
+        chrome.notifications.create(id, options, callback);
     };
 
     obj.setColor = function(type) {
@@ -50,10 +71,30 @@ var Adapter = {};
         });
     };
 
+    obj.setIcon = function(type) {
+        var iconPath = 'images/chatwork-logo_grayscale.png';
+        if (type === 'ALERT') {
+            iconPath = 'images/chatwork-logo_colorful.png';
+        }
+        this.toolbar.setIcon({ path: iconPath });
+    };
+
     obj.setText = function(val) {
         this.toolbar.setBadgeText({
             text: String(val)
         });
+    };
+
+    obj.handleToolbar = function (type) {
+        var type = type.toUpperCase();
+        this.setColor(type);
+        this.setIcon(type);
+        if (type === 'ALERT') {
+            this.notify(
+                'ChatWork Notifications',
+                'It may to exists unread post(s).'
+            );
+        }
     };
 
     obj.log = function() {
@@ -65,13 +106,15 @@ var Adapter = {};
     };
 
     obj.process = function() {
+        obj.log('start process');
         obj.run();
         var that = obj;
         obj.client.api('/my/status', null, function(response) {
             obj.log('run.response = ', response, that.prevCount != response.unread_num);
             if (that.prevCount != response.unread_num) {
+                var type = response.unread_num === 0 ? 'CLEAR' : 'ALERT';
                 that.prevCount = response.unread_num;
-                that.setColor(response.unread_num === 0 ? 'CLEAR' : 'ALERT');
+                that.handleToolbar(type);
                 that.setText(response.unread_num);
             }
             that.startTimer();
@@ -87,13 +130,16 @@ var Adapter = {};
     };
 
     obj.run = function(init) {
+        chrome.notifications.getPermissionLevel(function( response) {
+            console.log('getPermissionLevel', response);
+        });
         obj.client = new ChatWork();
         if (this.authorized()) {
             obj.client.setApiToken(ls.get('chatwork-api-token'));
         }
         if (init) {
             this.setColor('ALERT');
-            this.setText('!');
+            this.setText('E');
             this.process();
         }
     };
