@@ -10,6 +10,24 @@
 
 var Adapter = {};
 
+// Event handlers for the various notification events
+function notifClosed(notID, bByUser) {
+    console.log("The notification '" + notID + "' was closed" + (bByUser ? " by the user" : ""));
+}
+
+function notifClicked(notID) {
+    console.log("The notification '" + notID + "' was clicked");
+}
+
+function notifButtonClicked(notID, iBtn) {
+    console.log("The notification '" + notID + "' had button " + iBtn + " clicked");
+}
+
+// set up the event listeners
+chrome.notifications.onClosed.addListener(notifClosed);
+chrome.notifications.onClicked.addListener(notifClicked);
+chrome.notifications.onButtonClicked.addListener(notifButtonClicked);
+
 (function(obj) {
     obj.client    = null;
     obj.url       = 'https://www.chatwork.com';
@@ -58,9 +76,8 @@ var Adapter = {};
             message: message
         };
         var callback = function (response) {
-            console.log('created notify', response);
+            console.log('created notify id =', response);
         };
-        console.log('notify id', id);
 
         chrome.notifications.create(id, options, callback);
     };
@@ -130,9 +147,6 @@ var Adapter = {};
     };
 
     obj.run = function(init) {
-        chrome.notifications.getPermissionLevel(function( response) {
-            console.log('getPermissionLevel', response);
-        });
         obj.client = new ChatWork();
         if (this.authorized()) {
             obj.client.setApiToken(ls.get('chatwork-api-token'));

@@ -28,7 +28,7 @@
   "web_accessible_resources": [
     "callback.html"
   ],
-  "version": "0.0.3",
+  "version": "0.1.0",
   "manifest_version": 2,
   "content_security_policy": 
     "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://apis.google.com; frame-src https://plusone.google.com https://www.facebook.com https://platform.twitter.com https://apis.google.com https://accounts.google.com; object-src 'self'"
