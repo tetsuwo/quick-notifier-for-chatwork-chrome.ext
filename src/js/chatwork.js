@@ -19,7 +19,7 @@ function ChatWork(param) {
  * @param {object} param
  */
 ChatWork.prototype.initialize = function(param) {
-    this.apiBaseUrl = 'https://api.chatwork.com/v1';
+    this.apiBaseUrl = 'https://api.chatwork.com/v2';
     this.url = 'https://chatwork.com';
     this.name       = '_chatwork';
     this.times      = 0;

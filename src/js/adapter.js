@@ -103,7 +103,6 @@ chrome.notifications.onButtonClicked.addListener(notifButtonClicked);
     };
 
     obj.handleToolbar = function (type) {
-        var type = type.toUpperCase();
         this.setColor(type);
         this.setIcon(type);
         if (type === 'ALERT') {

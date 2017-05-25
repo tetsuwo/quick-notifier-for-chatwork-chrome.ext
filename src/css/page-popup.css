@@ -44,9 +44,6 @@ header {
 .notifications ul {
     list-style: disc inside;
     background-color: #efefef;
-    /*margin: 0 0 1em;*/
-    /*padding: .25em .5em;*/
-    /*border-radius: .5em;*/
 }
     .notifications ul li {
         display: block;
