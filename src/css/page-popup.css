@@ -11,8 +11,8 @@
  */
 
 body {
-    min-width: 350px;
-    max-width: 350px;
+    min-width: 380px;
+    max-width: 420px;
     border-radius: 3px;
     background-color: #eee;
     font-size: 12px;
